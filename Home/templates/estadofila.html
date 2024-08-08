@@ -1,0 +1,27 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'estadofilaStyles.css' %}">
+    <meta charset="utf-8"/>
+    <title>Estado Fila</title>
+</head>
+<header>
+    <h1 id="Iateh1">Estado Fila</h1>
+    <a class="linkhome"href="{% url 'IAteHome' %}">IAte</a>
+    <img id="logousm" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-usm-svg.svg" alt="Logo USM">
+</header>
+<body>
+    <div class=cuadrado>
+        <h1 class="importante">
+            {% for message in messages %}
+                {{message}}
+            {% endfor %}
+        </h1>
+    </div>
+</body>
+</html>
+
+{% endblock %}

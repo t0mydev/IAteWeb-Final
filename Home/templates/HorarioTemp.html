@@ -1,0 +1,49 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'HorarioTempStyles.css' %}">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloques más concurridos</title>
+</head>
+<header>
+    <h1 id="Iateh1">Bloques más concurridos</h1>
+    <img id="logousm" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Logo-usm-svg.svg" alt="Logo USM">
+    <a class="linkhome"href="{% url 'IAteHome' %}">IAte</a>
+</header>
+<body>
+    <h2 id="titulotabla">Bloque más lleno del casino este...</h2>
+    <ul class="displaydias">
+        <div class="displaydia">
+            <li class="dia">Lunes:<div class="trash">----<div></li>
+            <li class="bloque">{{ textolun }}</li>
+        </div>
+        <div class="displaydia">
+            <li class="dia">Martes:<div class="trash">---<div></li>
+            <li class="bloque">{{ textomar }}</li>
+        </div>
+        <div class="displaydia">
+            <li class="dia">Miércoles:</li>
+            <li class="bloque">{{ textomie }}</li>
+        </div>
+        <div class="displaydia">
+            <li class="dia">Jueves:<div class="trash">---<div></li>
+            <li class="bloque">{{ textojue }}</li>
+        </div>
+        <div class="displaydia">
+            <li class="dia">Viernes:<div class="trash">--<div></li>
+            <li class="bloque">{{ textovie }}</li>
+        </div>
+    </ul>
+    <div class="containertext">
+        <p class="text">En esta página se muestran los bloques más concurridos del casino en la semana, para que puedas planificar tus horarios de estudio.</p>
+    </div>
+    <div class="datacontainer">
+        <p>Los datos de esta página son obtenidos a través del cuestionario semanal, los analizamos para poder brindar esta herramienta, agradecemos su participación</p>
+    </div>
+</body>
+</html>
+{% endblock %}

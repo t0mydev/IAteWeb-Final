@@ -1,0 +1,44 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survey</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'basestyles.css' %}">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="d-flex">
+        <a class="linkhome"href="{% url 'IAteHome' %}">IAte</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      {% block messages %}
+      {% if messages %}
+      <ul class="messages {% if message.tags %}{{ message.tags }}{% endif %}">
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endblock %}
+
+      {% block "content" %}
+      {% endblock %}
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      Agradecemos su participación
+    </div>
+  </footer>
+</body>
+</html>
+{% endblock %}
